@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de estoque</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <br>
+    <br>
+    <h1 class='centralizar'>Produtos cadastrados</h1>
+    <table>
+        <tbody>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+            </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.quantidade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

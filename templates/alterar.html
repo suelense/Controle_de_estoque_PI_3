@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de estoque</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <br>
+    <h1 class='centralizar'>Movimentações</h1>
+    <table class="container">
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+                <th>Operações</th>
+            </tr>
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.quantidade }}</td>
+                <td>
+                    <form action="/update" method="POST">
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                        <input type="number" name="nova_quantidade" placeholder="Nova quantidade">
+                        <button type="submit">Atualizar</button>
+                    </form>
+                    <form action="/retirar" method="POST">
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                        <input type="number" name="quantidade_retirada" placeholder="Quantidade a ser retirada">
+                        <button type="submit">Retirar</button>
+                    </form>
+                    <form action="/devolver" method="POST">
+                        <input type="hidden" name="item_id" value="{{ item.id }}">
+                        <input type="number" name="quantidade_devolvida" placeholder="Quantidade a ser devolvida">
+                        <button type="submit">Devolver</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

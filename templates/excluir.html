@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de estoque</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <br>
+    <h1 class='centralizar'>Excluir produto</h1>
+    <table>
+        <tbody>
+          <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th></th>
+        </tr>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.quantidade }}</td>
+                <td>
+                  <form action="/delete" method="POST">
+                    <input type="hidden" name="item_id" value="{{ item.id }}">
+                    <button type="submit">Deletar</button>
+                  </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

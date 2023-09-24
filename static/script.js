@@ -1,0 +1,1 @@
+document.write('<div id="viewport"><div id="sidebar"><header><br><a href="/"><img src="static/logo.png" width="150"><br>Controle de estoque</a></header><ul class="nav"><li><a href="/cadastro">Cadastrar novo produto<br><br></a></li><li><a href="/alterar"href="#">Movimentar</a><br><br></li><li><a href="/excluir"href="#">Excluir</a></li></ul></div>');
