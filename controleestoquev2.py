@@ -85,5 +85,18 @@ def delete():
         db.session.commit()
     return redirect('/')
 
+@app.route('/pesquisa', methods=['GET', 'POST'])
+def pesquisa():
+    item = None
+    not_found = False
+
+    if request.method == 'POST':
+        codigo = request.form['codigo']
+        item = Item.query.filter_by(codigo=codigo).first()
+        if not item:
+            not_found = True
+
+    return render_template('pesquisa.html', item=item, not_found=not_found)
+
 if __name__ == '__main__':
     app.run(debug=True)

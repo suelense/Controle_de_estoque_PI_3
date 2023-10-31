@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Controle de estoque</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <br>
+    <h1 class='centralizar'>Pesquisar item por código</h1>
+
+    <form action="/pesquisa" method="post" style="width: 100%;">
+        <div style="display: flex; align-items: center; justify-content: center; margin-left: -50px;"> <!-- ajuste aqui -->
+            <label for="codigo" style="margin-right: 10px;">Código:</label>
+            <input type="number" name="codigo" id="codigo" required style="margin-right: 10px;">
+            <input type="submit" value="Pesquisar" style="margin-top: -8px;">
+        </div>
+    </form>
+
+    {% if item %}
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ item.codigo }}</td>
+                <td>{{ item.nome }}</td>
+                <td>{{ item.quantidade }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% elif not_found %}
+    <p>Item não encontrado!</p>
+    {% endif %}
+</body>
+</html>
