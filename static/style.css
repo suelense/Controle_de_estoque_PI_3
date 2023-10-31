@@ -116,3 +116,7 @@ button {
   width: 200px;
   margin: auto;
 }
+
+a:focus, a:hover {  
+  border: 2px solid #F00;  
+}  
