@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Controle de estoque - Login</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <br>
+    <h1 class="centralizar">Login</h1>
+
+    <form action="/login" method="post" class="centralizar">
+        <div>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+           <br>
+        <input type="hidden" name="action" value="login"> <!-- Indica que é uma tentativa de login -->
+        <input type="submit" value="Entrar">
+    </form>
+
+    <hr>
+
+    <h1 class="centralizar">Cadastro</h1>
+
+    <form action="/login" method="post" class="centralizar">
+        <div>
+            <label for="new_username">Novo Usuário:</label>
+            <input type="text" id="new_username" name="username" required>
+        </div>
+        <div>
+            <label for="new_password">Nova Senha:</label>
+            <input type="password" id="new_password" name="password" required>
+        </div>
+           <br>
+        <input type="hidden" name="action" value="cadastrar"> <!-- Indica que é uma tentativa de cadastro -->
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <form action="/logout" method="post" class="centralizar"> <!-- Formulário para sair -->
+        <input type="hidden" name="action" value="logout"> <!-- Indica que é uma ação de logout -->
+        <input type="submit" value="Sair"> <!-- Botão para sair -->
+    </form>
+</body>
+</html>

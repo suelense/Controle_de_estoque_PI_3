@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Controle de estoque - Login</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #3e8e4146;
+            font-size: 16px;
+        }
+
+        #sidebar {
+            position: fixed;
+            left: 250px;
+            width: 250px;
+            height: 100%;
+            margin-left: -250px;
+            background: #2c662e;
+            color: white;
+        }
+
+        #sidebar header {
+            background-color: #245326;
+            font-size: 25px;
+            line-height: 52px;
+            text-align: center;
+        }
+
+        #sidebar header a {
+            color: #fff;
+            display: block;
+            text-decoration: none;
+        }
+
+        #sidebar .nav a {
+            color: #CFD8DC;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .centralizar {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+
+        form label {
+            margin-bottom: 8px;
+        }
+
+        form input[type="text"],
+        form input[type="number"] {
+            padding: 8px;
+            margin-bottom: 8px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        form input[type="submit"] {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        .alert {
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .alert-danger {
+            background-color: #f44336;
+            color: white;
+        }
+
+        .alert-success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            width: 200px;
+            margin: auto;
+        }
+
+        a:focus,
+        a:hover {
+            border: 2px solid #F00;
+        }
+    </style>
+</head>
+<body>
+    <br>
+
+    <div class="centralizar">
+        <img src="static/logo.png" alt="Logo da empresa" width="150">
+    </div>
+        <h1 class="centralizar">Login</h1>
+
+    <form action="/login0" method="post" class="centralizar">
+        <div>
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+           <br>
+        <input type="hidden" name="action" value="login"> <!-- Indica que é uma tentativa de login -->
+        <input type="submit" value="Entrar">
+    </form>
+</body>
+</html>
